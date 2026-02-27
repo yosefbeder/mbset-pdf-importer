@@ -15,9 +15,12 @@ Cas, Text, Options (A, B, ...etc), and EXP are all markdown.
 
 For each question, map the extracted content to the columns as follows:
 
-- Cas: The shared clinical scenario or context. If a clinical case or scenario has multiple sub-questions (e.g., A, B, C), you MUST split them into separate CSV rows. Repeat the exact shared context in the `Cas` column for every row that belongs to it. However, if a clinical case or context applies to ONLY ONE question, leave the `Cas` column completely blank.
+- Cas: The shared clinical scenario, context, or matching instruction (e.g., "Match the following"). If a scenario or matching block has multiple sub-questions/items, you MUST split them into separate CSV rows. Repeat the exact shared context/instruction in the `Cas` column for every row that belongs to it. However, if a clinical case or context applies to ONLY ONE question, leave the `Cas` column completely blank.
 
-- Text: The specific question content without extra spaces. Remove any question number/letter prefixes (like 'A.', 'B.', '1.'). For multi-part questions, place the individual sub-question here (do not include the shared context). If a clinical case or context applies to ONLY ONE question, place the entire case context along with the question text into this column.
+- Text: The specific question content without extra spaces. Remove any question number/letter prefixes (like 'A.', 'B.', '1.').
+	- For multi-part clinical questions, place the individual sub-question here. Never repeat the context already placed in `Cas`.
+	- For matching questions, place the specific statement/premise to be matched here.
+	- If a clinical case or context applies to ONLY ONE question, place the entire case context along with the question text into this column.
 
 - A through H: The answer options. Remove any prefixes such as 'a)', 'b)', '1.', etc., from the options while preserving their original order. Place the first option in A, the second in B, and so on. (A and B are required; leave C-H blank if unused).
 
@@ -29,7 +32,7 @@ For each question, map the extracted content to the columns as follows:
 
 - tagSuggere = $subject
 
-- type = "QCS" (for MCQs) or "QROC" (for written)
+- type = "QCS" (for MCQs and Matching questions) or "QROC" (for written)
 
 - year = $year
 
