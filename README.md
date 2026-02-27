@@ -1,9 +1,11 @@
 # mbset-pdf-importer
 
-$tags = %TAGS (source + additional info, eg, "Exams, Final 2025")%
-$subject = %SUBJECT (optional)%
-$lecture = %LECTURE (optional)%
-$year = %YEAR (optional)%
+> Replace anything inside "%" before pasting for AI
+
+- $tags = %TAGS (source + additional info, eg, "Exams, Final 2025")%
+- $subject = %SUBJECT (optional)%
+- $lecture = %LECTURE (optional)%
+- $year = %YEAR (optional)%
 
 You will receive a list of questions (MCQs or written) either as a PDF file or plain text. Your task is to extract and convert these questions into a specific CSV format.
 
